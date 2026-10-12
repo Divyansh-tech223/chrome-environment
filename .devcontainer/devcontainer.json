@@ -1,6 +1,6 @@
 {
   "name": "Google Chrome DevContainer",
-  "postStartCommand": "docker rm -f chrome 2>/dev/null || true; docker run -d --name=chrome --restart=always -p 8080:3000 -e AUTO_LOGIN=true -e SUBFOLDER=/ --security-opt seccomp=unconfined --shm-size=2gb ghcr.io/linuxserver/chrome:latest",
+  "postStartCommand": "mkdir -p ~/.chrome-data && docker system prune -f 2>/dev/null || true; docker rm -f chrome 2>/dev/null || true; docker run -d --name=chrome --restart=always -p 8080:3000 -v /home/vscode/.chrome-data:/config -e AUTO_LOGIN=true -e SUBFOLDER=/ -e CHROME_CLI=\"--disable-dev-shm-usage --disable-gpu --no-sandbox\" --security-opt seccomp=unconfined --shm-size=4gb ghcr.io/linuxserver/chrome:latest",
   "portsAttributes": {
     "8080": {
       "label": "Google Chrome Web UI",
