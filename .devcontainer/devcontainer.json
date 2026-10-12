@@ -1,9 +1,10 @@
 {
-  "name": "Chrome DevContainer",
-  "postStartCommand": "docker run -d --name=chrome --restart=always -p 3000:3000 -v /home/vscode/config:/config --security-opt seccomp=unconfined --shm-size=2gb ghcr.io/linuxserver/chrome:latest || docker start chrome",
+  "name": "Google Chrome DevContainer",
+  "postStartCommand": "docker rm -f chrome 2>/dev/null || true; docker run -d --name=chrome --restart=always -p 8080:3000 -e AUTO_LOGIN=true -e SUBFOLDER=/ --security-opt seccomp=unconfined --shm-size=2gb ghcr.io/linuxserver/chrome:latest",
   "portsAttributes": {
-    "3000": {
-      "label": "Chrome Web UI",
+    "8080": {
+      "label": "Google Chrome Web UI",
+      "protocol": "http",
       "onAutoForward": "notify"
     }
   }
