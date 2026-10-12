@@ -1,0 +1,10 @@
+{
+  "name": "Chrome DevContainer",
+  "postStartCommand": "docker run -d --name=chrome --restart=always -p 3000:3000 -v /home/vscode/config:/config --security-opt seccomp=unconfined --shm-size=2gb ghcr.io/linuxserver/chrome:latest || docker start chrome",
+  "portsAttributes": {
+    "3000": {
+      "label": "Chrome Web UI",
+      "onAutoForward": "notify"
+    }
+  }
+}
