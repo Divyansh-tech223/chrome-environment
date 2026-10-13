@@ -14,12 +14,5 @@
       "onAutoForward": "openBrowser",
       "visibility": "public"
     }
-  },
-  "customizations": {
-    "vscode": {
-      "settings": {
-        "remote.autoForwardPorts": true
-      }
-    }
   }
 }
