@@ -11,7 +11,8 @@
     "8080": {
       "label": "Google Chrome Web UI",
       "protocol": "http",
-      "onAutoForward": "notify"
+      "onAutoForward": "notify",
+      "visibility": "public"
     }
   }
 }
