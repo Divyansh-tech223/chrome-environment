@@ -12,7 +12,7 @@
   "portsAttributes": {
     "8080": {
       "label": "Google Chrome Web UI",
-      "protocol": "http",
+      "protocol": "https",
       "onAutoForward": "openBrowser",
       "visibility": "public"
     }
