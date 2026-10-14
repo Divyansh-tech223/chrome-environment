@@ -1,5 +1,5 @@
 {
-  "name": "Chrome-Environment (V4)",
+  "name": "Chrome-Environment (V4.5)",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:1": {
@@ -7,7 +7,7 @@
     }
   },
   "onCreateCommand": "docker system prune -a --volumes -f && docker pull ghcr.io/linuxserver/chrome:latest",
-  "postStartCommand": "git pull origin main && mkdir -p ~/.chrome-data && docker rm -f chrome 2>/dev/null || true && docker run -d --name=chrome --restart=always -p 8080:3000 -v /home/vscode/.chrome-data:/config -e AUTO_LOGIN=true -e SUBFOLDER=/ -e CHROME_CLI=\"--disable-dev-shm-usage --disable-gpu --no-sandbox\" --security-opt seccomp=unconfined --shm-size=2gb ghcr.io/linuxserver/chrome:latest",
+  "postStartCommand": "git pull origin main && mkdir -p ~/.chrome-data && docker rm -f chrome 2>/dev/null || true && docker run -d --name=chrome --restart=always -p 8080:3000 -v /home/vscode/.chrome-data:/config -e AUTO_LOGIN=true -e SUBFOLDER=/ -e CHROME_CLI=\"--disable-dev-shm-usage --disable-gpu --no-sandbox\" --security-opt seccomp=unconfined --shm-size=2gb ghcr.io/linuxserver/chrome:latest && echo 'alias update-version=\"git pull origin main && devcontainer-cli rebuild --workspace-folder . 2>/dev/null || echo -e \"\\n✅ Local repository updated to latest commit! Please press F1 -> Codespaces: Full Rebuild Container to reload Docker cleanly.\\n\"\"' >> ~/.bashrc && echo 'git fetch origin main >/dev/null 2>&1 && LOCAL=\$(git rev-parse HEAD) && REMOTE=\$(git rev-parse origin/main) && if [ \$LOCAL != \$REMOTE ]; then NEW_VER=\$(git show origin/main:.devcontainer/devcontainer.json | grep -oP \"(?<=\\\"name\\\": \\\")[^\\\"]*\"); echo -e \"\\n=========================================\\n🚀 UPDATE AVAILABLE: \$NEW_VER\\nType: update-version (or press F1 -> Rebuild)\\n=========================================\\n\"; fi' >> ~/.bashrc",
   "forwardPorts": [8080],
   "portsAttributes": {
     "8080": {
