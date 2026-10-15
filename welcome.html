@@ -2,58 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chrome-Environment V5.0 (Bypass Protected)</title>
+  <title>Chrome-Environment V5.0</title>
   <style>
-    :root { --bg: #0b0f13; --card: #0f1720; --muted: #9aa6b2; --accent: #7c5cff; --ok: #2ecc71; --warn: #f1c40f; --bad: #e74c3c; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh;
-      background: linear-gradient(180deg, #061016 0%, #091018 60%), radial-gradient(800px 500px at 10% 10%, rgba(124,92,255,0.08), transparent);
-      color: #e6eef6; font-family: Inter, system-ui, -apple-system, sans-serif;
-    }
-    .wrap { max-width: 900px; margin: 6vh auto; padding: 28px; background: rgba(255,255,255,0.01); border-radius: 14px; box-shadow: 0 8px 30px rgba(2,6,23,0.7); border: 1px solid rgba(255,255,255,0.03); }
-    header { display: flex; align-items: center; gap: 18px; }
-    .logo { width: 72px; height: 72px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), #4cc0ff); display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 20px; }
-    h1 { margin: 0; font-size: 20px; }
-    h2 { margin: 4px 0 0 0; color: var(--muted); font-weight: 600; font-size: 14px; }
-    .status-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
-    .card { padding: 18px; border-radius: 10px; background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.02); display: flex; flex-direction: column; gap: 10px; min-height: 100px; }
-    .card .title { font-size: 13px; color: var(--muted); }
-    .indicator { display: flex; align-items: center; gap: 10px; }
-    .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--ok); box-shadow: 0 6px 18px rgba(46, 204, 113, 0.12); }
-    .live { font-weight: 700; color: #cfefff; }
-    .muted { color: var(--muted); font-size: 13px; }
-    footer { margin-top: 20px; color: var(--muted); font-size: 13px; display: flex; justify-content: space-between; align-items: center; }
+    body { background: #0b0f13; color: #e6eef6; font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .card { background: #0f1720; padding: 2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+    h1 { color: #7c5cff; margin-top: 0; }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <header>
-      <div class="logo">CE</div>
-      <div>
-        <h1>Chrome-Environment V5.0 <span style="font-weight:600;font-size:13px;color:var(--muted);">(Bypass Protected)</span></h1>
-        <h2>Modern dark-mode splash — secure access & hot updates</h2>
-      </div>
-    </header>
-    <section class="status-grid">
-      <div class="card">
-        <div class="title">HTTPS Tunnel</div>
-        <div class="indicator"><div class="dot"></div><div class="live">Active</div></div>
-      </div>
-      <div class="card">
-        <div class="title">School Network Filter Bypass</div>
-        <div class="indicator"><div class="dot"></div><div class="live">Bypass Active</div></div>
-      </div>
-      <div class="card">
-        <div class="title">Live Hot-Update Engine</div>
-        <div class="indicator"><div class="dot"></div><div class="live">Ready</div></div>
-      </div>
-    </section>
-    <footer>
-      <div>Release: V5.0</div>
-      <div>Bypass Mode: <strong>Protected</strong></div>
-    </footer>
-  </main>
+  <div class="card">
+    <h1>Chrome-Environment V5.0</h1>
+    <p>Status: Active & Protected</p>
+  </div>
 </body>
 </html>
